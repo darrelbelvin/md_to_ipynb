@@ -3,7 +3,7 @@ import json
 import subprocess
 import re
 
-regex = r"(^[#]+ )|(^\d. )"
+regex = r"(^[#]+ )|(^\d[\\]?[\.]?)"
 
 def convert(file_in, file_out):
     with open(file_in, 'r') as filehandle:
@@ -12,8 +12,9 @@ def convert(file_in, file_out):
     lines = ''.join(lines)
     matches = re.finditer(regex, lines, re.MULTILINE)
     indices = [match.span()[0] for match in list(matches)]
-    if indices[0] == 0:
-        indices = indices[1:]
+    if indices[0] != 0:
+        indices.insert(0,0)
+    indices.append(len(lines)-1)
     cells = [lines[indices[i]:indices[i+1]] for i in range(len(indices)-1)]
     js = {
         "cells":[{
