@@ -14,7 +14,7 @@ def convert(file_in, file_out):
     indices = [match.span()[0] for match in list(matches)]
     if indices[0] != 0:
         indices.insert(0,0)
-    indices.append(len(lines)-1)
+    indices.append(len(lines))
     cells = [lines[indices[i]:indices[i+1]] for i in range(len(indices)-1)]
     js = {
         "cells":[{
