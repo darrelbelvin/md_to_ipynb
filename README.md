@@ -16,7 +16,7 @@ Arguments:
 - -o   attempts to open the converted file after conversion (using xdg-open)
 
 ## Hints:
-I suggest placing the script in '~/bin/' then run 
+I suggest placing the script in '~/bin/' then in a terminal run:
 ```
 echo 'alias md_to_python='python ~/bin/md_to_python.py' >> .bash_aliases
 ```
