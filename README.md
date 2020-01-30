@@ -18,7 +18,8 @@ Arguments:
 ## Hints:
 I suggest placing the script in '~/bin/' then in a terminal run:
 ```
-echo 'alias md_to_python='python ~/bin/md_to_python.py' >> .bash_aliases
+echo "alias md_to_ipynb='python ~/bin/md_to_ipynb.py'" >> ~/.bash_profile
+source ~/.bash_profile
 ```
 You can then run it from the terminal in any folder by simply calling md_to_python
 
